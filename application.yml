@@ -3,16 +3,13 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8010
+      defaultZone: http://localhost:8010/
 
 ---
 spring:
   profiles: subject
 words: I,You,He,She,It
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8010
+
 ---
 spring:
   profiles: verb
