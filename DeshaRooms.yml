@@ -1,2 +1,4 @@
 ---
 lucky-word: Irish, Rabbit's Foot, Serendipity
+server
+ port:9001
