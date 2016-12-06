@@ -6,34 +6,34 @@ spring:
 spring:
   profiles: development
   application:
-    name: front
+    name: online-store-web
 zuul:
   ignored-services: '*'
   routes:
     edge-service:
       path: /api/**
-      url: http://localhost:9002
+      url: http://localhost:9005
     auth-service:
       path: /user/**
-      url: http://localhost:9000/uaa/user
+      url: http://localhost:9004/uaa/user
     user-service:
       path: /users/**
 security:
   enable-csrf: false
   oauth2:
     resource:
-      userInfoUri: http://localhost:9000/uaa/user
+      userInfoUri: http://localhost:9004/uaa/user
     client:
-      accessTokenUri: http://localhost:9000/uaa/oauth/token
-      userAuthorizationUri: http://localhost:9000/uaa/oauth/authorize
+      accessTokenUri: http://localhost:9004/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9004/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
 eureka:
   instance:
-    non-secure-port: 9003
+    non-secure-port: 9000
     prefer-ip-address: true
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:9003/eureka/
