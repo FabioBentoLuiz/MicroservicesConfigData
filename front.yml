@@ -6,7 +6,7 @@ spring:
 spring:
   profiles: development
   application:
-    name: online-store-web
+    name: front
 zuul:
   ignored-services: '*'
   routes:
