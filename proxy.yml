@@ -10,7 +10,8 @@ spring:
 zuul:
   ignoredServices: '*'
   routes:
-    auth: /uaa/signup/**
+    auth: 
+      path: /uaa/signup/**
       stripPrefix: false
 security:
   oauth2:
