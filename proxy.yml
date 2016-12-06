@@ -6,18 +6,19 @@ spring:
 spring:
   profiles: development
   application:
-    name: edge-service
+    name: proxy
 zuul:
   ignored-services: '*'
   ignoredPatterns: /**/api/**
   routes:
-    account-service: /account/**
-    payment-service: /payment/**
-    inventory-service: /inventory/**
-    order-service: /order/**
-    user-service: /user/**
-    catalog-service: /catalog/**
-    shopping-cart-service: /shoppingcart/**
+    auth: /signup/**
+    #account-service: /account/**
+    #payment-service: /payment/**
+    #inventory-service: /inventory/**
+    #order-service: /order/**
+    #user-service: /user/**
+    #catalog-service: /catalog/**
+    #shopping-cart-service: /shoppingcart/**
 security:
   oauth2:
     resource:
