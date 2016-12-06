@@ -12,7 +12,7 @@ zuul:
   routes:
     auth: 
       path: /signup/**
-      stripPrefix=false
+        stripPrefix: false
     #account-service: /account/**
     #payment-service: /payment/**
     #inventory-service: /inventory/**
