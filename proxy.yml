@@ -11,7 +11,7 @@ zuul:
   ignored-services: '*'
   ignoredPatterns: /**/api/**
   routes:
-    auth: /auth/**
+    auth: /user/**
     #account-service: /account/**
     #payment-service: /payment/**
     #inventory-service: /inventory/**
