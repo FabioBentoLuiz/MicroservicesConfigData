@@ -8,8 +8,11 @@ spring:
   application:
     name: proxy
 zuul:
+  ignoredServices: '*'
   routes:
-    auth: /signup/**
+    auth: 
+      path: /signup/**
+      stripPrefix=false
     #account-service: /account/**
     #payment-service: /payment/**
     #inventory-service: /inventory/**
