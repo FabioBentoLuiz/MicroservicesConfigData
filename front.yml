@@ -1,0 +1,39 @@
+---
+spring:
+  profiles:
+    active: development
+---
+spring:
+  profiles: development
+  application:
+    name: front
+zuul:
+  ignored-services: '*'
+  routes:
+    edge-service:
+      path: /api/**
+      url: http://localhost:9002
+    auth-service:
+      path: /user/**
+      url: http://localhost:9000/uaa/user
+    user-service:
+      path: /users/**
+security:
+  enable-csrf: false
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9000/uaa/user
+    client:
+      accessTokenUri: http://localhost:9000/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9000/uaa/oauth/authorize
+      clientId: acme
+      clientSecret: acmesecret
+eureka:
+  instance:
+    non-secure-port: 9003
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
