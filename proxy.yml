@@ -10,13 +10,13 @@ spring:
 zuul:
   ignoredServices: '*'
   routes:
-    auth: /signup/**
+    auth: /uaa/signup/**
     stripPrefix: false
 security:
   oauth2:
     resource:
       userInfoUri: http://localhost:9004/uaa/user
-  ignored: /signup/**
+  ignored: /uaa/signup/**
 eureka:
   instance:
     prefer-ip-address: true
