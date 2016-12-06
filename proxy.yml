@@ -11,6 +11,7 @@ zuul:
   ignoredServices: '*'
   routes:
     auth: /signup/**
+    stripPrefix: false
 security:
   oauth2:
     resource:
