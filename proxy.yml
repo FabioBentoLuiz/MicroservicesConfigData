@@ -11,7 +11,7 @@ zuul:
   ignored-services: '*'
   ignoredPatterns: /**/api/**
   routes:
-    auth: /user/**
+    auth: /signup/**
     #account-service: /account/**
     #payment-service: /payment/**
     #inventory-service: /inventory/**
@@ -23,4 +23,4 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:9004/uaa/user
-  ignored: /catalog/**
+  ignored: /signup/**
