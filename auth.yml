@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: development
+---
+server:
+  port: 9004
+  contextPath: /uaa
+security:
+  user:
+    password: password
+  enable-csrf: false
+logging.level.org.springframework.security: DEBUG
+spring:
+  profiles: development
+  datasource:
+    url: jdbc:mysql://localhost:3306/DESHA_DATABASE
+    username: authUser
+    password: 123456
+    initialize: true
+security.ignored: /resources/**
